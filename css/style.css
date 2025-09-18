@@ -1,0 +1,130 @@
+:root{
+  --accent: #007bff;
+  --bg: #f0f2f5;
+  --text: #333;
+  --card-bg: #fff;
+  --input-bg: #fff;
+  --label-color: #333; /* cor do label flutuante */
+}
+
+/* Tema escuro override */
+body.dark{
+  --accent: #66aaff;
+  --bg: #121212;
+  --text: #f5f5f5;
+  --card-bg: #1e1e1e;
+  --input-bg: #2c2c2c;
+  --label-color: #fff;
+}
+
+/* Tema claro override */
+body.light{
+  --accent: #007bff;
+  --bg: #f0f2f5;
+  --text: #333;
+  --card-bg: #fff;
+  --input-bg: #fff;
+  --label-color: #333;
+}
+
+/* Base */
+*{box-sizing: border-box}
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background .25s, color .25s;
+}
+
+/* Toggle */
+#theme-toggle{
+  position: fixed;
+  top:15px; right:15px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Card */
+.login-container{
+  width:320px;
+  padding:28px;
+  border-radius:12px;
+  background: var(--card-bg);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  text-align:center;
+}
+
+/* Inputs */
+.input-group{ position: relative; margin:32px 0; width:100%; }
+
+/* Estilo do input (ajuste para tema via variáveis) */
+.input-group input{
+  width:100%;
+  padding:10px 10px;
+  font-size:16px;
+  border-radius:8px;
+  border:1px solid rgba(0,0,0,0.12);
+  background: var(--input-bg);
+  color: var(--text);
+  outline: none;
+  transition: border-color .18s, box-shadow .18s;
+}
+
+/* placeholder padrão */
+.input-group input::placeholder{ color: rgba(0,0,0,0.35); }
+
+/* Label flutuante */
+.input-group label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: top .18s ease, font-size .18s ease, color .18s ease, transform .18s ease;
+  color: var(--text);
+}
+
+/* estado flutuante: quando focado ou quando tem valor */
+.input-group.focused label,
+.input-group.filled label {
+  top: -12px;
+  font-size: 12px;
+  color: var(--label-color); /* agora usa variável do tema */
+  padding: 0 4px;
+  background: var(--card-bg);
+}
+
+/* foco visual no input */
+.input-group input:focus{
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+/* botão / link */
+button[type="submit"]{
+  width:100%;
+  padding:12px;
+  border-radius:8px;
+  border:none;
+  background: var(--accent);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  margin-top:8px;
+}
+
+.login-container a{
+  display:block;
+  margin-top:12px;
+  color: var(--accent);
+  text-decoration:none;
+  font-size:13px;
+}

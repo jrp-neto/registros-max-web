@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Página de Login</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dark">
+  <button id="theme-toggle">🌙</button>
+
+  <div class="login-container">
+    <h2>Registros Max</h2>
+    <form autocomplete="off">
+      <div class="input-group">
+        <!-- mantive placeholder para acessibilidade; JS o limpa ao focar -->
+        <input type="text" id="usuario" name="usuario" required placeholder="Usuário">
+        <label for="usuario">Usuário</label>
+      </div>
+
+      <div class="input-group">
+        <input type="password" id="senha" name="senha" required placeholder="Senha">
+        <label for="senha">Senha</label>
+      </div>
+
+      <button type="submit">Entrar</button>
+      <a href="#">Esqueceu a senha?</a>
+    </form>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
